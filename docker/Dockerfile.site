@@ -1,0 +1,4 @@
+FROM node:19
+
+WORKDIR /project/
+ENTRYPOINT ["./docker/main.sh"]

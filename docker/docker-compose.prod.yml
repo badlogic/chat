@@ -1,0 +1,13 @@
+version: "3"
+services:
+    web:
+        environment:
+            VIRTUAL_HOST: ${PROJECT_HOST},www.${PROJECT_HOST}
+            LETSENCRYPT_HOST: ${PROJECT_HOST},www.${PROJECT_HOST}
+            LETSENCRYPT_EMAIL: "badlogicgames@gmail.com"
+        networks:
+            - reverse_proxy
+networks:
+    reverse_proxy:
+        external:
+            name: nginx-proxy
